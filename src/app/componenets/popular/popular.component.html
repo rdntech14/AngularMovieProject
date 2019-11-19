@@ -1,0 +1,41 @@
+<p>popular works!</p>
+<!-- <form (ngSubmit)="addToCartMethod(myForm)" #myForm="ngForm">
+<mat-card class="mat-card" *ngFor="let m of getMovieListResponse.results">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><input name=username ngModel>{{m.title}}</mat-card-title>
+    <mat-card-subtitle name=rating ngModel>Rating : {{m.vote_average}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <div>
+    <img class="poster" mat-card-image src={{tmdbHostImageURL}}{{m.poster_path}} alt="Photo of a Shiba Inu">
+  </div>
+
+  <mat-card-content>
+    <div class="card-content">
+      <p>{{m.overview}}</p>
+      <p style=color:blue>$10</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button type="submit" mat-raised-button color="primary">Add to Cart</button>
+    <button mat-raised-button color="primary">Add to Favorite</button>
+  </mat-card-actions>
+</mat-card>
+</form> -->
+
+<div *ngFor="let m of getMovieListResponse.results; index as i">
+  <form>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{tmdbHostImageURL}}{{m.poster_path}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{m.title}}</h5>
+        <p class="card-text">{{m.overview}}</p>
+        <h5 style="color:blue">$10</h5>
+        <button class="btn btn-primary" (click)="addToCartMethod(m.title)">Add to Cart</button><br/>
+        <button class="btn btn-danger" (click)="removeFromCartMethod(m.title)">Remove from Cart</button>
+      </div>
+    </div>
+  </form>
+</div>

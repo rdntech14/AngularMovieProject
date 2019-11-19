@@ -1,0 +1,14 @@
+<p>home works!</p>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <button mat-flat-button routerLink="popular">Popular</button>
+        <button mat-flat-button routerLink="animated">Animated</button>
+        <button mat-flat-button routerLink="documentary">Documentary</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p>{{titleDes}}</p>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

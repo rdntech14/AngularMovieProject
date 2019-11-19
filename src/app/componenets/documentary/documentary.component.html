@@ -1,0 +1,26 @@
+<p>documentary works!</p>
+
+<mat-card class="mat-card" *ngFor="let m of getMovieListResponse.results">
+  
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{m.title}}</mat-card-title>
+    <mat-card-subtitle>Rating : {{m.vote_average}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <div>
+    <img class="poster" mat-card-image src={{tmdbHostImageURL}}{{m.poster_path}} alt="Photo of a Shiba Inu">
+  </div>
+
+  <mat-card-content>
+    <div class="card-content">
+      <p>{{m.overview}}</p>
+      <p style=color:blue>$10</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addToCartMethod()">Add to Cart</button>
+    <button mat-raised-button color="primary">Add to Favorite</button>
+  </mat-card-actions>
+</mat-card>
